@@ -69,6 +69,6 @@ class WantedPeopleController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wanted_person_params
-      params.require(:wanted_person).permit(:name, :image)
+      params.require(:wanted_person).permit(:name, :image, :wanted_for, :bounty)
     end
 end

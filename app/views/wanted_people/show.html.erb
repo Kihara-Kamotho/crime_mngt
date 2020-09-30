@@ -18,14 +18,14 @@
         <strong>Name:</strong>
         <%= @wanted_person.name %>
       </div>
-      <!-- <div class="wanted-for">
+      <div class="wanted-for">
         <strong>Wanted for:</strong>
         <%= @wanted_person.wanted_for %>
       </div>
       <div class="bounty">
         <strong>Bounty:</strong>
         <%= @wanted_person.bounty %> 
-      </div> -->
+      </div>
       <div>
         <%= link_to 'Edit', edit_wanted_person_path(@wanted_person), class: "btn btn-primary" %> |
         <%= link_to 'Back', wanted_people_path, class: "btn btn-primary" %> 
