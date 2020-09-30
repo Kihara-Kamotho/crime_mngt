@@ -5,8 +5,7 @@ ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -66,3 +65,13 @@ gem 'cancancan'
 gem 'geocoder', '~> 1.6', '>= 1.6.3' 
 #
 gem "figaro"
+
+group :development do 
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3', '~> 1.4'
+end 
+
+group :production do 
+  gem 'pg'
+  gem 'rails_12factor'
+end
