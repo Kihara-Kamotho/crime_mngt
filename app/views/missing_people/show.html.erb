@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+<!--  -->
+<div class="container">
+  <div class="row my-4">
+    <h1 style="text-align: center;">Missing Person</h1>
+  </div>
+  <div class="col">
+    <div class="container-fluid">
+      <div class="missing-name">
+        <p>
+          <strong>Name:</strong>
+          <%= @missing_person.name %>
+        </p>
+      </div>
+      <div class="missing-gender">
+        <p>
+          <strong>Gender:</strong>
+          <%= @missing_person.gender %>
+        </p>
+      </div>
+      <div class="missing-ward">
+        <p>
+          <strong>Ward:</strong>
+          <%= @missing_person.ward %>
+        </p>
+      </div>
+      <div class="missing-color">
+        <p>
+          <strong>Skin color:</strong>
+          <%= @missing_person.skin_color %>
+        </p>
+      </div>
+      <div class="missing-height">
+        <p>
+          <strong>Height:</strong>
+          <%= @missing_person.height %>
+        </p>
+      </div>
+      <div class="missing-last-seen">
+        <p>
+          <strong>Place last seen:</strong>
+          <%= @missing_person.place_last_seen %>
+        </p>
+      </div>
+      <div class="missing-date">
+        <p>
+          <strong>Date missing:</strong>
+          <%= @missing_person.date_missing %>
+        </p>
+      </div>
+      <div class="missing-contacts">
+        <p>
+          <strong>Contacts:</strong>
+          <%= @missing_person.contacts %>
+        </p>
+      </div>
+      <div class="missing-image">
+        <strong>Image:</strong>
+        <% if @missing_person.image.attached? %>
+          <%= image_tag (@missing_person.image) %>
+        <% else %>
+          <p>Missing person has no attached image</p>
+        <% end %>
+      </div>
+
+      <div class="missing-links">
+        <%= link_to 'Edit', edit_missing_person_path(@missing_person), class: "btn btn-primary" %> |
+        <%= link_to 'Back', missing_people_path, class: "btn btn-primary" %> | 
+        <%= link_to "Delete", missing_person_path, method: :delete, class: "btn btn-danger" %>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+<!--  -->
+<div class="container">
+  <div class="row my-4">
+    <h1 style="text-align: center;">Crime Report</h1>
+  </div>
+    <div class="col">
+      <div class="container-fluid">
+        <div class="report-crime">
+          <p>
+            <strong>Crime:</strong>
+            <%= @report.crime %>
+          </p>
+        </div>
+        <div class="report-description">
+          <p>
+            <strong>Crime description:</strong>
+            <%= @report.crime_description %>
+          </p>
+        </div>
+        <div class="report-scene">
+          <p>
+            <strong>Crime scene:</strong>
+            <%= @report.crime_scene %>
+          </p>
+        </div>
+        <div class="report-suspects">
+          <p>
+            <strong>Crime suspects:</strong>
+            <%= @report.crime_suspects %>
+          </p>
+        </div>
+        <div class="report-victim">
+          <p>
+            <strong>Victim:</strong>
+            <%= @report.victim %>
+          </p>
+        </div>
+        <div class="report-image">
+          <strong>Image:</strong>
+          <% if @report.image.attached? %>
+            <div style="width: 300px; height: auto;">
+              <%= image_tag(@report.medium) %>
+            </div>
+            
+          <% else %>
+            <p>Report has no attached image</p>
+          <% end %>
+        </div>
+        <div class="report-video">
+          <strong>Video:</strong>
+          <% if @report.video.attached? %>
+            <div style="width: 400px; height: auto;">
+              <%= video_tag(url_for(@report.video), style: "width: 100%; height: auto;", controls: '') %>
+            </div>
+          <% else %>
+            <p>Report has no attached video</p>
+          <% end %>
+        </div>
+        <div class="report-links">
+          <%= link_to 'Edit', edit_report_path(@report), class: "btn btn-primary" %> |
+          <%= link_to 'Back', reports_path, class: "btn btn-primary" %> |
+          <%= link_to "Delete", report_path, method: :delete, class: "btn btn-danger" %>
+        </div>
+        
+        <div class="image-map">
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=600x300&zoom=12&markers=size:small%7Ccolor:red%7C#{@report.latitude},#{@report.longitude}&key=AIzaSyDGJ27LySGRpc4upNIRa6pfdPXun3QBdsE", alt: "Map" %>
+        </div>
+
+      </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CrimeMngt15</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body style="background-color: darkgoldenrod;">
+
+    <!-- Nav bar--> 
+    <nav class="navbar navbar-light bg-light d-flex" style="background-color: blue;">
+      <div class="container">
+        <div class="logo">
+          <img alt="logo" src="http://kenyapolice.go.ke/templates/corpway/images/s5_logo.png" id="s5_logo" onclick="window.document.location.href='http://kenyapolice.go.ke/'" />
+          <div class="navbar-brand">
+            Online Crime Management System
+          </div>
+        </div>
+        <div class="login-controls text-right">
+          <!--toggle sign_in buttons-->
+          <% if user_signed_in? %>
+            <p>Hello, <%= current_user.email %> | <%= link_to "sign out", destroy_user_session_path, method: :delete, class: "btn btn-info p-2" %></p>
+          <% else %>
+            <%= link_to "sign in", new_user_session_path, class: "btn btn-info p-2" %>
+            <%= link_to "sign up", new_user_registration_path, class: "btn btn-info p-2" %>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
+    
+    <main class="container" style="background-color: rgb(247, 244, 244); font-family: sans; font-size: 14px;">
+      <%= yield %>
+    </main>
+      
+    <!--footer-->
+    <footer class="container footer" style="background-color: rgb(247, 244, 244);">
+      <nav class="navbar d-flex">
+        <div class="col-md-3 mx-auto" style="text-decoration: none;">
+          <h4><%= link_to 'Home', root_path %></h4>
+        </div>
+        <div class="col-md-3 mx-auto">
+          <ul class="menu"> <h4>Useful Links</h4>
+            <li><a href="http://www.nationalpolice.go.ke" target="blank">National Police Service</a></li>
+            <li><a href="http://www.cid.go.ke" target="blank">Directorate of criminal investigations</a></li>
+            <li><a href="http://www.npsc.go.ke" target="blank">National Police Service Commission</a></li>
+            <li><a href="http://www.odpp.go.ke" target="blank">Office of The Director of Public Prosecutions</a></li>
+            <li><a href="http://www.ipoa.go.ke/" target="blank">Independent Policing Oversight Authority</a></li>
+            <li><a href="http://www.kenyalaw.org" target="blank">Kenya Law Reports</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mx-auto">
+          <h4>About us</h4>
+          <p>We are a tech based start up that aims at providing an easier and more convinient way to report crime.</p>
+        </div>
+        <div class="col-md-3 mx-auto">
+          <h4>Contact us</h4>
+          <p>Office of the Inspector General<br />Taifa Road, Jogoo House "A" 4th Floor<br />P.O Box 44249-00100 Nairobi, Kenya<br />Telegraphic address: "IG,NPS"<br />Tel:+254 20 2221969<br />Website: <a href="http://www.nationalpolice.go.ke">www.nationalpolice.go.ke</a></p>
+        </div>
+      </nav>
+      
+      <div class="copyright text-right">
+        <span>Copyright &copy; 2020. Online Crime Management System.</span>
+      </div>
+    </footer>
+  </body>
+   
+</html>
+
+<!-- class=" font-sans text-black antialiased leading-tight bg-grey-lighter" -->

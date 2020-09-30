@@ -1,0 +1,2 @@
+class PoliceStation < ApplicationRecord
+end

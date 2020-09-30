@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+<!--  -->
+<div class="container">
+  <div class="row my-4">
+    <h1 style="text-align: center;">Stolen Property</h1>
+  </div>
+  <div class="col">
+    <div class="container-fluid">
+      <div class="stolen-name">
+        <p>
+          <strong>Property name:</strong>
+          <%= @stolen_property.property_name %>
+        </p>
+      </div>
+      <div class="stolen-description">
+        <p>
+          <strong>Property description:</strong>
+          <%= @stolen_property.property_description %>
+        </p>
+      </div>
+      <div class="stolen-id">
+        <p>
+          <strong>Identification number:</strong>
+          <%= @stolen_property.identification_number %>
+        </p>
+      </div>
+      <div class="stolen-last-seen">
+        <p>
+          <strong>Place last seen:</strong>
+          <%= @stolen_property.place_last_seen %>
+        </p>
+      </div>
+      <div class="stolen-owner">
+        <p>
+          <strong>Owner name:</strong>
+          <%= @stolen_property.owner_name %>
+        </p>
+      </div>
+
+      <div class="stolen-image">
+        <strong>Image:</strong>
+        <% if @stolen_property.image.attached? %>
+          <%= image_tag (@stolen_property.image) %>
+        <% else %>
+        <p>Stolen property has no attached image</p>
+        <% end %>        
+      </div>
+
+      <div class="stolen-links">
+        <%= link_to 'Edit', edit_stolen_property_path(@stolen_property), class: "btn btn-primary" %> |
+        <%= link_to 'Back', stolen_properties_path, class: "btn btn-primary" %> | 
+        <%= link_to "Delete", stolen_property_path, method: :delete, class: "btn btn-danger" %>
+      </div>
+
+      <div class="image-map">
+        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=600x300&zoom=12&markers=size:small%7Ccolor:red%7C#{@stolen_property.latitude},#{@stolen_property.longitude}&key=AIzaSyDGJ27LySGRpc4upNIRa6pfdPXun3QBdsE", alt: "Map" %>
+      </div>
+    </div>
+  </div>
+</div>

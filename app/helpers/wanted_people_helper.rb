@@ -1,0 +1,2 @@
+module WantedPeopleHelper
+end

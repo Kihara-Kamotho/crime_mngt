@@ -1,0 +1,87 @@
+<%= form_with(model: missing_person, local: true) do |form| %>
+
+
+  
+<% end %>
+<!--  -->
+<div class="container">
+  <div class="row my-4">
+    <h2 style="text-align: center;"> Missing Person</h2>
+  </div>
+    <div class="col">
+      <div class="container-fluid">
+
+        <%= form_with(model: missing_person, local:true) do |form| %>
+          <% if missing_person.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(missing_person.errors.count, "error") %> prohibited this missing_person from being saved:</h2>
+        
+              <ul>
+                <% missing_person.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="field">
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :gender %>
+            <%= form.text_field :gender %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :ward %>
+            <%= form.text_field :ward %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :skin_color %>
+            <%= form.text_field :skin_color %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :height %>
+            <%= form.text_field :height %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :place_last_seen %>
+            <%= form.text_field :place_last_seen %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :date_missing %>
+            <%= form.date_select :date_missing %>
+          </div>
+
+          <div class="field">
+            <%= form.label :city %>
+            <%= form.text_field :city %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :street %>
+            <%= form.text_field :street %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :contacts %>
+            <%= form.number_field :contacts %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :image %>
+            <%= form.file_field :image %>
+          </div>
+        
+          <div class="actions">
+            <%= form.submit %> | <%= link_to 'cancel', missing_people_path, class: "btn  btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>

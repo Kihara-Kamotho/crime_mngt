@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stolen Properties</h1>
+<div class="text-right mb-3">
+  <%= link_to 'New Stolen Property', new_stolen_property_path, class: "btn btn-primary" %>
+</div>
+
+<!--  -->
+<% @stolen_properties.each do |stolen_property| %> 
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail thumb-box">
+      <h4 style="text-align: center;"><%= stolen_property.property_name %></h4>
+      <div class="stolen-image">
+        <% if stolen_property.image.attached? %>
+          <%= image_tag (stolen_property.thumbnail) %>
+        <% else %>
+          <p>No image attached to stolen property</p>
+        <% end %>
+      </div>
+      <div class="stolen-description">
+        <%= truncate(stolen_property.property_description) %>
+      </div>
+      <div class="stolen-link">
+        <%= link_to 'show', stolen_property, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

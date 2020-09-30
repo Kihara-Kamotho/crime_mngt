@@ -1,0 +1,67 @@
+<!--  -->
+<div class="container">
+  <div class="row my-4">
+    <h2 style="text-align: center;">Report Stolen Property</h2>
+  </div>
+    <div class="col">
+      <div class="container-fluid">
+
+        <%= form_with(model: stolen_property, local:true) do |form| %>
+          <% if stolen_property.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(stolen_property.errors.count, "error") %> prohibited this stolen_property from being saved:</h2>
+        
+              <ul>
+                <% stolen_property.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="field">
+            <%= form.label :property_name %>
+            <%= form.text_field :property_name %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :property_description %>
+            <%= form.text_area :property_description %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :identification_number %>
+            <%= form.number_field :identification_number %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :place_last_seen %>
+            <%= form.text_field :place_last_seen %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :owner_name %>
+            <%= form.text_field :owner_name %>
+          </div>
+
+          <div class="field">
+            <%= form.label :city %>
+            <%= form.text_field :city %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :street %>
+            <%= form.text_field :street %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :image %>
+            <%= form.file_field :image %>
+          </div>
+          
+          <div class="actions">
+            <%= form.submit %> | <%= link_to 'cancel', stolen_properties_path, class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>

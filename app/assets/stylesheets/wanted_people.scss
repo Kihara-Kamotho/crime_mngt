@@ -1,0 +1,20 @@
+// Place all the styles related to the wanted_people controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.thumbnail {
+  width: 200px auto;
+  height: 200px;
+  border: groove;
+  border-radius: 5px;
+  padding-left: 20px;
+}
+
+.wanted-link {
+  position: absolute;
+  // left: 10px;
+  top: 155px;
+}
+
+.person-image {
+  align-content: center;
+}

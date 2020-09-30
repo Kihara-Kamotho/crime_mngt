@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<!--  -->
+<div class="container">
+  <div class="row my-4">
+    <h1 style="text-align: center;">Wanted Person</h1>
+  </div>
+  <div class="col">
+    <div class="container-fluid">
+      <div class="wanted-image">
+        <% if @wanted_person.image.attached? %>
+          <div style="width: 300px; height: auto;">
+            <%= image_tag(@wanted_person.medium) %>
+          </div>
+        <% end %>
+      </div>
+      <div class="person-name">
+        <strong>Name:</strong>
+        <%= @wanted_person.name %>
+      </div>
+      <!-- <div class="wanted-for">
+        <strong>Wanted for:</strong>
+        <%= @wanted_person.wanted_for %>
+      </div>
+      <div class="bounty">
+        <strong>Bounty:</strong>
+        <%= @wanted_person.bounty %> 
+      </div> -->
+      <div>
+        <%= link_to 'Edit', edit_wanted_person_path(@wanted_person), class: "btn btn-primary" %> |
+        <%= link_to 'Back', wanted_people_path, class: "btn btn-primary" %> 
+      </div>
+    </div>
+  </div>
+</div>

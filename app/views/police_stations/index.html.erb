@@ -1,0 +1,31 @@
+
+<h1>Police Stations</h1>
+
+<br>
+<div class="text-right mb-3">
+  <!-- <%= link_to 'New Police Station', new_police_station_path, class: "btn btn-primary" %> -->
+</div>
+
+<!--  -->
+<div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Tel</th>
+        <th scope="col">Location</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @police_stations.each do |police_station| %>
+        <tr>
+          <td><%= police_station.name %></td>
+          <td><%= police_station.tel %></td>
+          <td><%= police_station.location %></td>
+          <!-- <td><%= link_to 'Show', police_station, class: "btn btn-primary" %></td> -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @police_station.name %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @police_station.tel %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @police_station.location %>
+</p>
+
+<%= link_to 'Edit', edit_police_station_path(@police_station), class: "btn btn-primary" %> |
+<%= link_to 'Back', police_stations_path, class: "btn btn-primary" %>

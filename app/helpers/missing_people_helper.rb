@@ -1,0 +1,2 @@
+module MissingPeopleHelper
+end

@@ -1,0 +1,37 @@
+<%= form_with(model: wanted_person, local: true) do |form| %>
+  <% if wanted_person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wanted_person.errors.count, "error") %> prohibited this wanted_person from being saved:</h2>
+
+      <ul>
+        <% wanted_person.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :wanted_for %>
+    <%= form.text_field :wanted_for %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bounty %>
+    <%= form.text_field :bounty %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<!--  -->

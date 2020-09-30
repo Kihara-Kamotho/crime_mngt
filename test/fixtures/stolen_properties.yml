@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  property_name: MyString
+  property_description: MyText
+  identification_number: 1
+  place_last_seen: MyString
+  owner_name: MyString
+
+two:
+  property_name: MyString
+  property_description: MyText
+  identification_number: 1
+  place_last_seen: MyString
+  owner_name: MyString

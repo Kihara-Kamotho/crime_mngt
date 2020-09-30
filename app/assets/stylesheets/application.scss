@@ -1,0 +1,72 @@
+@import "bootstrap";
+@import "reports";
+@import "report";
+@import "missing_people";
+@import "stolen_properties";
+@import "pages";
+@import "wanted_people"; 
+
+.navbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: xx-large;
+  font-style: normal;
+  font-variant: small-caps;
+  color: white;
+}
+
+#navbarDropdown {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  position: relative;
+}
+
+.footer{
+  font-size: 14px;
+  padding-top: 30px;
+  ul{
+    padding-left: 0;
+    > li{
+      display: list-item; 
+      padding-right: 15px; 
+      color: #003569;
+    }
+  }
+}
+
+.login-controls {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 4px;
+}
+
+.field {
+  padding: 4px;
+}
+
+.actions {
+  padding: 8px;
+}
+
+.login-form {
+  border: 2px solid black;
+  width: 500px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.signup-form {
+  border: 2px solid black;
+  width: 500px;
+  margin: auto;
+  margin-top: 30px
+}
+
+.image-map {
+  padding-top: 20px;
+}

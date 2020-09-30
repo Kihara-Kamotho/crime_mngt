@@ -1,0 +1,72 @@
+<!--  -->
+<div class="container">
+  <div class="row my-4">
+    <h2 style="text-align: center;"> Report</h2>
+  </div>
+    <div class="col">
+      <div class="container-fluid">
+
+        <%= form_with(model: report, local:true) do |form| %>
+          <% if report.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
+        
+              <ul>
+                <% report.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="field">
+            <%= form.label :crime %>
+            <%= form.text_field :crime %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :crime_description %>
+            <%= form.text_area :crime_description %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :crime_scene %>
+            <%= form.text_field :crime_scene %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :crime_suspects %>
+            <%= form.text_area :crime_suspects %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :victim %>
+            <%= form.text_field :victim %>
+          </div>
+
+          <div class="field">
+            <%= form.label :city %>
+            <%= form.text_field :city %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :street %>
+            <%= form.text_field :street %>
+          </div>
+
+          <div class="field">
+            <%= form.label :image %>
+            <%= form.file_field :image %>
+          </div>
+        
+          <div class="field">
+            <%= form.label :video %>
+            <%= form.file_field :video %>
+          </div>
+        
+          <div class="actions">
+            <%= form.submit %> | <%= link_to 'cancel', reports_path, class: "btn btn-primary"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>

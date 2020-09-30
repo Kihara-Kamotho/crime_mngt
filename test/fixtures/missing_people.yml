@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  gender: MyString
+  ward: MyString
+  skin_color: MyString
+  height: 1.5
+  place_last_seen: MyString
+  date_missing: 2020-08-25
+  contacts: 1
+
+two:
+  name: MyString
+  gender: MyString
+  ward: MyString
+  skin_color: MyString
+  height: 1.5
+  place_last_seen: MyString
+  date_missing: 2020-08-25
+  contacts: 1

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Crime Reports</h1>
+
+<div class="text-right mb-3">
+  <%= link_to 'New Report', new_report_path, class: "btn btn-primary" %>
+</div>
+
+<hr>
+
+<!--  -->
+<% @reports.each do |report| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail thumb-box">
+      <h4 ><%= report.crime %></h4>
+        <div class="report-image">
+          <% if report.image.attached? %>
+            <%= image_tag (report.thumbnail) %>
+          <% else %>
+            <p>No image attached to this report</p>
+          <% end %>
+        </div>
+        <div class="report-description">
+          <%= truncate(report.crime_description)%>
+        </div>
+        <div class="report-link">
+          <%= link_to 'show', report, class: "btn btn-primary"%>
+        </div>
+    </div>
+  </div>
+<% end %>

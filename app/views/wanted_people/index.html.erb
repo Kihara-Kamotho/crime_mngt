@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wanted People</h1>
+
+<br>
+
+<!-- <div class="text-right mb-3">
+  <%= link_to 'New Wanted Person', new_wanted_person_path, class: "btn btn-primary" %>
+</div> -->
+<!--  -->
+<% @wanted_people.each do |wanted_person| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail thumb-box">
+      <h4>Person name:<%= wanted_person.name %></h4>
+      <div class="person-image">
+        <% if wanted_person.image.attached? %>
+          <%= image_tag(wanted_person.thumbnail) %>
+        <% else %>
+          <p>No image attached to wanted person</p>
+        <% end %>
+      </div>
+      <div class="wanted-link">
+        <%= link_to "show", wanted_person_path(wanted_person), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

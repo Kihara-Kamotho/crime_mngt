@@ -1,0 +1,65 @@
+<div class="container" style="margin-top: 30px;">
+  <div class="col-md-9 mx-aut0">
+      <h3>Quick info</h3>
+    <div style="margin-left: 20px;">
+      <p>This website provides facility to report crime, stolen property, missing persons as well as show details of
+        mostwanted person and prevelant crime hotspots areas.</p>
+    </div>
+      
+    <h3>Services</h3>
+    <div class="services">
+      <ul>
+        <li><%= link_to "report crime", new_report_path %></li>
+        <li><%= link_to "report missing person", new_missing_person_path %></li>
+        <li><%= link_to "report stolen property", new_stolen_property_path %></li>
+        <li><%= link_to "view reports", reports_path %></li>
+        <li><%= link_to "view stolen property", stolen_properties_path %></li>
+        <li><%= link_to "view missing persons", missing_people_path %></li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="col-md-3 mx-auto">
+    <h4></h4>
+    <ul class="nav-menu">
+      <li><a href="#">Police hotlines 911/999/122</a></li>
+      <li><a href="https://www.osac.gov/Country/Kenya/Content/Detail/Report/03c822af-2922-4a4c-ba8b-15f4aead1599"
+          target="blank">Crime statistics</a></li>
+      <li><a
+          href="https://www.standardmedia.co.ke/kenya/article/2000138376/security-experts-map-out-crime-hotspots-in-kenya"
+          target="blank">Crime hotspots</a></li>
+      <li><%= link_to "Wanted persons list", wanted_people_path %></li>
+      <li><%= link_to "police stations", police_stations_path %></li>
+    </ul>
+  </div>
+</div>
+<div class="container" style="margin-left: 20px;">
+  <h2>News</h2>
+  
+  <div class="container-fluid" style="margin-left: 20px; margin-right: 60px;">
+    <h3>Occurrence Book goes digital</h3>
+    <div>
+      <%= image_tag 'OB.jpeg' %>
+    </div>
+    <div style="margin-top: 16px;">
+      Complaints about loss of crime and incident report trails at police stations will now be a thing of the past after
+      the launch of Digital Police Occurrence Book.
+
+      The Digital Occurrence Book operates in such a way that once a report has been made and entered, it cannot be
+      altered.
+
+      Speaking during the launch officiated by Cabinet Secretary Interior and Coordination of National Government
+      Dr.Fred Matiang’i at Buru buru Police station.
+
+      Inspector General of Police Mr. Hilary Mutyambai said, since the system will be able to generate and analyse
+      prevalent crime in each police station, proper case and crime management measures will be instituted to ensure
+      effective and efficient service delivery.
+
+      Mr. Mutyambai said, a total of 210 desk top computers have already been installed at Police Stations and Posts
+      within Nairobi city County while 10,181 IPads have also been issued to Police officers in the city to ensure the
+      effectiveness, efficiency and responsiveness while serving the members of the public.
+
+    </div>
+  </div>
+</div>
