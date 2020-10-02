@@ -32,7 +32,7 @@ class ReportsController < ApplicationController
       if @report.save
 
         #mailer
-        ReportMailer.report_created(@user).deliver
+        # ReportMailer.report_created(@user).deliver
         format.html { redirect_to @report, notice: 'Report was successfully created.' }
         format.json { render :show, status: :created, location: @report }
       else

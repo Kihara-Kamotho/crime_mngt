@@ -30,7 +30,7 @@ class MissingPeopleController < ApplicationController
 
     respond_to do |format|
       if @missing_person.save
-        MissingPersonMailer.missing_person_created(@user).deliver
+        # MissingPersonMailer.missing_person_created(@user).deliver
         format.html { redirect_to @missing_person, notice: 'Missing person was successfully created.' }
         format.json { render :show, status: :created, location: @missing_person }
       else

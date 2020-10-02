@@ -31,7 +31,7 @@ class StolenPropertiesController < ApplicationController
     respond_to do |format|
       if @stolen_property.save
         #mailer 
-        StolenPropertyMailer.stolen_property_created(@user).deliver
+        # StolenPropertyMailer.stolen_property_created(@user).deliver
         format.html { redirect_to @stolen_property, notice: 'Stolen property was successfully created.' }
         format.json { render :show, status: :created, location: @stolen_property }
       else
