@@ -40,7 +40,9 @@
       <div class="stolen-image">
         <strong>Image:</strong>
         <% if @stolen_property.image.attached? %>
-          <%= image_tag (@stolen_property.image) %>
+          <div style="width: 300px; height: auto;">
+            <%= image_tag (@stolen_property.medium) %>
+          </div>
         <% else %>
         <p>Stolen property has no attached image</p>
         <% end %>        

@@ -8,6 +8,10 @@ class MissingPerson < ApplicationRecord
     return self.image.variant(resize: "85x85!")
   end
 
+  def medium 
+    return self.image.variant(resize: "300x300!") 
+  end
+
   def address 
     [street, city].compact.join(',') 
   end
